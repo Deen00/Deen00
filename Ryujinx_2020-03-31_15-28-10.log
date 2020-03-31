@@ -1,0 +1,55 @@
+00:00:05.076 | Application LoadApplication: Loading as XCI.
+00:00:05.936 | Loader LoadExeFs: Loading rtld...
+00:00:05.937 | Loader LoadExeFs: Loading main...
+00:00:06.147 | Loader LoadExeFs: Loading subsdk0...
+00:00:06.174 | Loader LoadExeFs: Loading sdk...
+00:00:06.905 | Loader LoadStaticObjects: Loading image 0 at 0x0000000008000000...
+00:00:06.905 | Loader LoadStaticObjects: Loading image 1 at 0x0000000008004000...
+00:00:06.944 | Loader LoadStaticObjects: Loading image 2 at 0x000000000babb000...
+00:00:06.949 | Loader LoadStaticObjects: Loading image 3 at 0x000000000c1c8000...
+00:00:06.969 | Application EnsureSaveData: Ensuring required savedata exists.
+00:00:07.780 | GUI.RenderLoop Gpu PrintGpuInformation: NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2 (4.6.0 NVIDIA 445.75)
+00:00:07.979 | ServiceAm GetAppletResourceUserId: Stubbed. 
+00:00:08.258 | ServiceAm AcquireForegroundRights: Stubbed. 
+00:00:08.287 | ServiceAm SetFocusHandlingMode: Stubbed. 
+00:00:08.321 | ServiceAm SetOutOfFocusSuspendingEnabled: Stubbed. 
+00:00:08.414 | HLE.HostThread.0 KernelSvc PrintResult: SendSyncRequest64 returned error PortRemoteClosed.
+00:00:08.417 | HLE.HostThread.0 KernelSvc PrintResult: SendSyncRequest64 returned error PortRemoteClosed.
+00:00:08.418 | HLE.HostThread.0 KernelSvc PrintResult: SendSyncRequest64 returned error PortRemoteClosed.
+00:00:08.419 | ServicePctl Initialize: Service is already initialized!
+00:00:29.714 | HLE.HostThread.0 KernelSvc PrintResult: MapSharedMemory64 returned error InvalidMemRange.
+00:00:30.280 | ServiceNv FinishInitialize: Stubbed. 
+00:00:30.420 | ServiceVi CreateStrayLayer: Stubbed. 
+00:00:31.094 | ServiceNv InitializeEx: Stubbed. 
+00:00:31.100 | ServiceNv GetVaRegions: Stubbed. 
+00:00:31.102 | ServiceNv GetVaRegions: Stubbed. 
+00:00:31.190 | ServiceNv Create: Created map 1 with size 0x00001000!
+00:00:31.234 | ServiceNv Create: Created map 2 with size 0x00010000!
+00:00:31.263 | ServiceNv GetActiveSlotMask: Stubbed. 
+00:00:31.278 | ServiceNv Create: Created map 3 with size 0x00063000!
+00:00:31.313 | ServiceNv Create: Created map 4 with size 0x00001000!
+00:00:31.330 | ServiceNv BindChannel: Stubbed. 
+00:00:31.332 | ServiceNv SetNvMapFd: Stubbed. 
+00:00:31.336 | ServiceNv AllocGpfifoEx2: Stubbed. 
+00:00:31.336 | ServiceNv AllocObjCtx: Stubbed. 
+00:00:31.338 | ServiceNv SetTimeout: Stubbed. 
+00:00:31.343 | ServiceNv SetErrorNotifier: Stubbed. 
+00:00:31.344 | ServiceNv SetUserData: Stubbed. 
+00:00:31.348 | ServiceNv SetTimeslice: Stubbed. 
+00:00:31.350 | ServiceNv Create: Created map 5 with size 0x00010000!
+00:00:31.380 | ServiceNv Create: Created map 6 with size 0x00049000!
+00:00:31.385 | ServiceNv ZcullBind: Stubbed. 
+00:00:31.585 | ServiceNv Create: Created map 7 with size 0x01950000!
+00:00:31.804 | Emulation CurrentDomain_UnhandledException: Unhandled exception caught: System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.NotImplementedException: android.gui.IGraphicBufferProducer 2
+   at Ryujinx.HLE.HOS.Services.SurfaceFlinger.NvFlinger.ProcessParcelRequest(ServiceCtx context, Byte[] parcelData, Int32 code) in C:\projects\ryujinx\Ryujinx.HLE\HOS\Services\SurfaceFlinger\NvFlinger.cs:line 88
+   at Ryujinx.HLE.HOS.Services.Vi.RootService.ApplicationDisplayService.IHOSBinderDriver.TransactParcelAuto(ServiceCtx context) in C:\projects\ryujinx\Ryujinx.HLE\HOS\Services\Vi\RootService\ApplicationDisplayService\IHOSBinderDriver.cs:line 83
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Ryujinx.HLE.HOS.Services.IpcService.CallMethod(ServiceCtx context) in C:\projects\ryujinx\Ryujinx.HLE\HOS\Services\IpcService.cs:line 121
+   at Ryujinx.HLE.HOS.Ipc.IpcHandler.IpcCall(Switch device, KProcess process, MemoryManager memory, KThread thread, KClientSession session, IpcMessage request, Int64 cmdPtr) in C:\projects\ryujinx\Ryujinx.HLE\HOS\Ipc\IpcHandler.cs:line 50
+   at Ryujinx.HLE.HOS.Kernel.SupervisorCall.SvcHandler.ProcessIpcRequest(Object state) in C:\projects\ryujinx\Ryujinx.HLE\HOS\Kernel\SupervisorCall\SvcIpc.cs:line 157
+   at System.Threading.QueueUserWorkItemCallbackDefaultContext.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
